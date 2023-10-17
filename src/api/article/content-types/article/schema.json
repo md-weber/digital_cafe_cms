@@ -12,19 +12,19 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Test": {
+    "blog": {
       "type": "blocks"
     },
-    "Publish": {
+    "published": {
       "type": "datetime"
     },
-    "Update": {
+    "updated": {
       "type": "datetime"
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Subtitle": {
+    "subtitle": {
       "type": "string"
     },
     "author": {

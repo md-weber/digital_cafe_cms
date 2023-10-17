@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "upcoming_events",
+  "info": {
+    "singularName": "upcoming-event",
+    "pluralName": "upcoming-events",
+    "displayName": "Upcoming Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "meetingPoint": {
+      "type": "string"
+    }
+  }
+}

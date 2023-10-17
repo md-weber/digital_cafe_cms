@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: digital_cafe_cms
+    env: docker
+    dockerfilePath: ./Dockerfile.prod
+    plan: starter
+    region: frankfurt
+    buildCommand: yarn install && yarn build
+    startCommand: yarn start
+    healthCheckPath: /_health
+    disk:
+      name: digital_cafe_cms-uploads
+      mountPath: /opt/render/project/src/public/uploads
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 18.16
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: digital_cafe_cms
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: APP_KEYS
+        generateValue: true
+      - key: API_TOKEN_SALT
+        generateValue: true
+
+databases:
+  - name: digital_cafe_cms
+    plan: starter
